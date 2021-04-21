@@ -126,7 +126,7 @@ function security_menu() {
 		;;
 		2) last |less
 		;;
-		3) cut -d: -f1,3 /etc/passwd |less
+		3) grep 'x:0' /etc/passwd |less
 		;;
 		4) menu
 		;;
