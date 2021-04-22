@@ -6,21 +6,19 @@
 
 
     if ($choice -match "all") {
-            $allServices = Get-Service | Out-GridView
-            Write-Host $allServices
+            Get-Service | Out-Host
+            
             sleep 2
             main
     }
     if ($choice -match "running") {
-            $runningServices = Get-Service | Where Status -EQ "Running" | Out-GridView
-            Write-Host $runningServices
+            Get-Service | Where { $_.Status -eq "Running" } | Out-Host
             sleep 2
             main
     
     }
     if ($choice -match "stopped") {
-            $stoppedServices = Get-Service | Where Status -EQ "Stopped" | Out-GridView
-            Write-Host $stoppedServices
+            Get-Service | Where {$_.Status -eq "Stopped" } | Out-Host
             sleep 2 
             main 
     
